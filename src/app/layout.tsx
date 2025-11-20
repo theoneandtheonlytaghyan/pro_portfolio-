@@ -28,7 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className="dark" // 👈 force dark on initial SSR
+    >
       <head>
         <JsonLd />
       </head>
@@ -37,8 +41,8 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"      // 👈 always dark
+          enableSystem={false}     // 👈 ignore system theme
           disableTransitionOnChange
         >
           <ClientLayout>
@@ -53,7 +57,6 @@ export default function RootLayout({
               <Footer />
             </div>
           </ClientLayout>
-          
         </ThemeProvider>
       </body>
     </html>
