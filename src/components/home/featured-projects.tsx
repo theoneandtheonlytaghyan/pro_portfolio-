@@ -2,132 +2,163 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronRight, Grid } from "lucide-react"; // Removed unused ArrowRight
-import { ProjectCard } from "@/components/ui/project-card";
-import { Button } from "@/components/ui/button"; // Button is now used only in JSX, not in imports list
-import { 
-  ScrollReveal, 
-  StaggerContainer, 
-  StaggerItem,
-} from "@/components/animations"; 
-import { projects, Project } from "@/data/projects"; 
+import { ArrowRight, Code, Cloud, Server, TrendingUp, Cpu, Layers } from "lucide-react"; 
+import { skillsData } from "@/data/skills";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { TiltCard } from "@/components/animations"; 
+// Note: MagneticButton is intentionally excluded.
 
+// --- Enhanced Data Mapping (Using a muted primary accent color) ---
+const PRIMARY_ACCENT = 'bg-gray-800'; // Dark charcoal color
+const ACCENT_TEXT = 'text-gray-900 dark:text-gray-100';
+const ACCENT_BORDER = 'border-gray-900 dark:border-gray-100';
 
-const FEATURED_PROJECT_IDS = [
-  "syncverse", 
-  "community-dashboard",
-  "student-result-analyzer"
-];
+const SKILL_ICONS = {
+  'Frontend': <Code className="w-6 h-6 text-gray-800 dark:text-gray-100" />,
+  'Backend': <Server className="w-6 h-6 text-gray-800 dark:text-gray-100" />,
+  'DevOps': <Cloud className="w-6 h-6 text-gray-800 dark:text-gray-100" />,
+  'Database': <Cpu className="w-6 h-6 text-gray-800 dark:text-gray-100" />,
+};
 
-const useFeaturedProjects = (): Project[] => {
-  const featuredProjects = projects.filter(project => 
-    FEATURED_PROJECT_IDS.includes(project.id)
-  );
-  return featuredProjects;
+const SKILL_COLORS = {
+  'Frontend': { bar: 'bg-gray-800', badgeBg: 'bg-gray-100', badgeText: 'text-gray-800' },
+  'Backend': { bar: 'bg-gray-700', badgeBg: 'bg-gray-200', badgeText: 'text-gray-700' },
+  'DevOps': { bar: 'bg-gray-600', badgeBg: 'bg-gray-300', badgeText: 'text-gray-600' },
+  'Database': { bar: 'bg-gray-500', badgeBg: 'bg-gray-400', badgeText: 'text-gray-500' },
 };
 
 
-export function FeaturedProjects() {
-  const featuredProjects = useFeaturedProjects();
+export function SkillsShowcase() {
+  const showcaseSkills = skillsData.slice(0, 3).map(category => ({
+    ...category,
+    icon: SKILL_ICONS[category.title as keyof typeof SKILL_ICONS] || <Layers className="w-6 h-6" />,
+    colors: SKILL_COLORS[category.title as keyof typeof SKILL_COLORS] || SKILL_COLORS['Frontend'],
+    skills: category.skills.slice(0, 4)
+  }));
 
   return (
+    // DESIGN 1: Minimalist Background (High Contrast)
     <section 
       className="py-24 md:py-36 
                  bg-white dark:bg-gray-950 
-                 text-gray-900 dark:text-gray-50 
+                 text-gray-900 dark:text-white 
                  relative overflow-hidden 
-                 border-t border-gray-200 dark:border-gray-800"
+                 border-y border-gray-300 dark:border-gray-800"
     >
       <div className="container mx-auto px-6 relative z-10">
         
-        <ScrollReveal delay={0.1} width="100%">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-center mb-16 max-w-4xl mx-auto"
-          >
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mb-3 flex items-center justify-center">
-              <Grid className="w-4 h-4 mr-2" />
-              Featured Work
-            </p>
-            
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
-              A Selection of Creative & Technical Projects
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-light">
-              Highlighting key projects that demonstrate versatility across design, development, and strategic problem-solving.
-            </p>
-          </motion.div>
-        </ScrollReveal>
-        
-        <div className="flex justify-center mb-20">
-          <motion.div 
-            initial={{ scaleX: 0, opacity: 0 }}
-            whileInView={{ scaleX: 1, opacity: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="w-24 h-0.5 bg-gray-300 dark:bg-gray-700 transform origin-center"
-          />
-        </div>
-
-        <div className="max-w-7xl mx-auto">
-          {featuredProjects.length > 0 && (
-            <StaggerContainer 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
-              // Removed stagger={0.15} and delay={0.4} to fix Type Error
-            >
-              {featuredProjects.map((project) => (
-                <StaggerItem 
-                  key={project.id} 
-                  className="mx-auto w-full max-w-sm md:max-w-none"
-                >
-                  <ProjectCard 
-                    project={project} 
-                    detailed={true} 
-                    className="
-                      relative z-10 
-                      transition-all duration-300 ease-out 
-                      bg-white dark:bg-gray-800 
-                      border border-gray-200 dark:border-gray-700 
-                      shadow-md hover:shadow-lg dark:shadow-gray-700/20
-                      hover:border-gray-300 dark:hover:border-gray-600 
-                      rounded-lg overflow-hidden
-                    "
-                  />
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          )}
-        </div>
-
+        {/* --- Header Section (Brutalist Typography) --- */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-20"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          <Link 
-            href="/projects" 
-            className="inline-flex group" 
-          >
+          {/* DESIGN 2: Functional Heading */}
+          <p className={`text-sm font-medium uppercase tracking-[0.3em] ${ACCENT_TEXT} mb-4 flex items-center justify-center`}>
+            <TrendingUp className="w-4 h-4 mr-3" />
+            Core Competencies
+          </p>
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-4 uppercase tracking-tighter">
+            Technical Skill Matrix
+          </h2>
+          <div className="w-16 h-1 bg-gray-900 dark:bg-gray-100 mx-auto mt-6" /> {/* Brutalist Separator */}
+        </motion.div>
+
+        {/* --- Skills Grid (Structured Cards) --- */}
+        <div className="grid gap-8 md:grid-cols-3 mb-20 max-w-7xl mx-auto">
+          {showcaseSkills.map((category, categoryIndex) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: categoryIndex * 0.1 }}
+            >
+              <TiltCard className="h-full">
+                {/* DESIGN 3: Minimalist Card with Sharp Borders */}
+                <Card 
+                  className={`h-full bg-white dark:bg-gray-900 
+                             border-2 ${ACCENT_BORDER} 
+                             rounded-none shadow-none 
+                             transition-all duration-300 ease-in-out 
+                             hover:bg-gray-100 dark:hover:bg-gray-800 
+                             relative group`}
+                >
+                  <CardHeader className="pb-4 border-b-2 border-dashed border-gray-300 dark:border-gray-700">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-3xl">{category.icon}</span>
+                        <CardTitle className={`text-xl font-bold uppercase ${ACCENT_TEXT}`}>{category.title}</CardTitle>
+                      </div>
+                      <Badge 
+                        variant="default" 
+                        className={`text-xs uppercase px-3 py-1 font-mono 
+                                    ${category.colors.badgeBg} ${category.colors.badgeText} border border-transparent 
+                                    rounded-none shadow-none`}
+                      >
+                        {category.skills.length} Items
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pt-6">
+                    <div className="space-y-6">
+                      {category.skills.map((skill) => (
+                        <div key={skill.name} className="space-y-1">
+                          <div className="flex justify-between items-center text-sm">
+                            <span className="font-medium">{skill.name}</span>
+                            <span className="text-sm font-mono text-muted-foreground">{skill.level}%</span>
+                          </div>
+                          {/* DESIGN 4: Monochromatic Progress Bar */}
+                          <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-none overflow-hidden">
+                            <motion.div
+                              className={`h-full ${category.colors.bar} rounded-none`}
+                              initial={{ width: 0 }}
+                              whileInView={{ width: `${skill.level}%` }}
+                              viewport={{ once: true }}
+                              transition={{
+                                duration: 1.0,
+                                delay: categoryIndex * 0.1 + 0.3,
+                                ease: "easeOut"
+                              }}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </TiltCard>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* --- Call to Action (Functional Block) --- */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center"
+        >
+          {/* DESIGN 5: Blocky, High-Contrast Button */}
+          <Link href="/skills" className="inline-flex group">
             <Button 
               size="lg" 
-              className="
-                         px-8 py-3 text-lg font-semibold 
+              className={`
+                         px-10 py-4 text-lg font-bold uppercase tracking-widest 
                          bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900
-                         border border-transparent 
-                         rounded-full 
-                         transition-all duration-300 ease-out 
+                         border-2 ${ACCENT_BORDER} 
+                         rounded-none shadow-none 
+                         transition-all duration-300 ease-in-out 
                          hover:bg-gray-700 dark:hover:bg-gray-300 
-                         group-hover:shadow-md group-hover:shadow-gray-500/30 dark:group-hover:shadow-gray-400/30
-                         flex items-center justify-center
-              "
-            >
-              View All Projects
-              <ChevronRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                         transform group-hover:translate-x-1 group-hover:translate-y-[-1px]` // Subtle shift for interaction
+              >
+                View Complete Skill Index
+                <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
           </Link>
         </motion.div>
