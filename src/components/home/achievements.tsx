@@ -3,6 +3,15 @@
 import { motion } from "framer-motion";
 import { Award, Users, Target, Briefcase } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { LazyStarsBackground } from "../3d/lazy-stars";
+import { FloatingParticles } from "../animations";
+<div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* 3D Background */}
+      <LazyStarsBackground /> 
+      <FloatingParticles/>
+
+
+</div>
 
 const achievements = [
   {

@@ -39,7 +39,7 @@ export function Skills() {
             Technical <span className="gradient-text">Skills</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            A comprehensive toolkit spanning cloud computing, full-stack development,
+            A comprehensive toolkit spanning cloud computing, frontend development,
             machine learning, and blockchain technologies. Continuously learning and adapting to new technologies.
           </p>
         </motion.div>
