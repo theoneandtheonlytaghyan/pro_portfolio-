@@ -1,105 +1,98 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Link from "next/link";
+import Image from "next/image";
 
-import { skillsData } from "@/data/skills";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-
-import { TiltCard, MagneticButton } from "@/components/animations";
+const skills = [
+  { name: "HTML", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" },
+  { name: "CSS", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" },
+  { name: "JavaScript", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" },
+  { name: "TypeScript", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" },
+  { name: "React", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" },
+  { name: "Next.js", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" },
+  { name: "Tailwind", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" },
+  { name: "Framer Motion", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framer/framer-original.svg" },
+  { name: "Material UI", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-original.svg" },
+  { name: "Flask", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original.svg" },
+  { name: "MySQL", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" },
+  { name: "Firebase", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg" },
+  { name: "AWS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
+  { name: "Vercel", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vercel/vercel-original.svg" },
+  { name: "Git", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" },
+  { name: "GitHub", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" },
+  { name: "Python", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
+  { name: "Pandas", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg" },
+  { name: "NumPy", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" },
+  { name: "Matplotlib", logo: "https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" },
+];
 
 export function SkillsShowcase() {
-  // Get top skills from first 3 categories for homepage display
-  const showcaseSkills = skillsData.slice(0, 3).map(category => ({
-    ...category,
-    skills: category.skills.slice(0, 4)
-  }));
+  // Split skills into rows: 8, 6, 5
+  const firstRow = skills.slice(0, 8);
+  const secondRow = skills.slice(8, 14);
+  const thirdRow = skills.slice(14, 19);
 
   return (
-    <section className="py-20 bg-muted/50">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Proficient in modern web technologies and cloud computing platforms
-          </p>
-        </motion.div>
+    <section className="relative flex flex-col items-center justify-center min-h-screen bg-black text-white py-20">
+      <div className="text-center mb-16 z-10">
+        <h2 className="text-6xl font-extrabold mb-3 tracking-tight">Technical Skills</h2>
+        <p className="text-gray-400 text-lg font-light">Skills I have mastered yet</p>
+      </div>
 
-        <div className="grid gap-6 md:grid-cols-3 mb-12 max-w-6xl mx-auto">
-          {showcaseSkills.map((category, categoryIndex) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-            >
-              <TiltCard className="h-full">
-                <Card className="h-full hover:shadow-lg transition-all duration-300 border-border/50 hover:border-lavender/50">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <span className="text-2xl">{category.icon}</span>
-                        <CardTitle className="text-lg">{category.title}</CardTitle>
-                      </div>
-                      <Badge variant="outline" className="text-xs border-lavender/50 badge-lavender-outline">
-                        {category.skills.length}+
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      {category.skills.map((skill) => (
-                        <div key={skill.name} className="space-y-1.5">
-                          <div className="flex justify-between items-center text-sm">
-                            <span className="font-medium">{skill.name}</span>
-                            <span className="text-xs text-muted-foreground">{skill.level}%</span>
-                          </div>
-                          <div className="h-2 bg-muted rounded-full overflow-hidden">
-                            <motion.div
-                              className="h-full bg-gradient-to-r from-lavender to-teal rounded-full"
-                              initial={{ width: 0 }}
-                              whileInView={{ width: `${skill.level}%` }}
-                              viewport={{ once: true }}
-                              transition={{
-                                duration: 1,
-                                delay: categoryIndex * 0.1 + 0.1,
-                                ease: "easeOut"
-                              }}
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </TiltCard>
-            </motion.div>
+      <div className="w-full max-w-6xl flex flex-col items-center justify-center space-y-12">
+        {/* First row with 8 icons */}
+        <div className="flex justify-center space-x-8">
+          {firstRow.map((skill) => (
+            <SkillIcon key={skill.name} skill={skill} />
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center"
-        >
-         
-          <MagneticButton>
-            <Link href="/skills">
-              
-            </Link>
-          </MagneticButton>
-        </motion.div>
+        {/* Second row with 6 icons */}
+        <div className="flex justify-center space-x-12">
+          {secondRow.map((skill) => (
+            <SkillIcon key={skill.name} skill={skill} />
+          ))}
+        </div>
+
+        {/* Third row with 5 icons */}
+        <div className="flex justify-center space-x-16">
+          {thirdRow.map((skill) => (
+            <SkillIcon key={skill.name} skill={skill} />
+          ))}
+        </div>
       </div>
     </section>
+  );
+}
+
+// SkillIcon component with light effect
+function SkillIcon({ skill }) {
+  return (
+    <div className="flex flex-col items-center group">
+      <div className="relative">
+        {/* Light effect coming out of the side */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-16 h-16 bg-gradient-to-r from-white/30 to-transparent rounded-full blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        
+        <div className="relative z-10">
+          <Image
+            src={skill.logo}
+            alt={skill.name}
+            width={64}
+            height={64}
+            className="object-contain transition-transform duration-300 group-hover:scale-110"
+            unoptimized
+            onError={(e) => {
+              console.error(`Failed to load image for ${skill.name}`);
+              // Fallback to a placeholder if image fails to load
+              e.currentTarget.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white"><text x="50%" y="50%" font-size="10" text-anchor="middle" dy=".3em" fill="white">${skill.name}</text></svg>`;
+            }}
+          />
+        </div>
+      </div>
+      <span className="mt-2 text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {skill.name}
+      </span>
+    </div>
   );
 }
