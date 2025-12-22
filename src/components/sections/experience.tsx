@@ -77,7 +77,8 @@ export function Experience() {
                   ))}
                 </div>                
                 <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => (
+                  {exp.technologies.map((tech: string) => (
+
                     <span
                       key={tech}
                       className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary"
