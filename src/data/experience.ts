@@ -1,3 +1,15 @@
+export type Experience = {
+  id: string;
+  company: string;
+  role: string;
+  duration: string;
+  location: string;
+  description: string;
+  achievements: string[];
+  technologies: string[];
+  type: string;
+};
+
 export const experienceData: Experience[] = [
   {
     id: "google-student-ambassador",
