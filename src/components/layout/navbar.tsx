@@ -11,17 +11,14 @@ import { NAV_ITEMS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { DialogTitle } from "@radix-ui/react-dialog"; // REQUIRED FIX
 
 export function Navbar() {
   const pathname = usePathname();
 
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mounted, setMounted] = useState(false);
 
-  // mobile menu
   const [open, setOpen] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -36,28 +33,13 @@ export function Navbar() {
         setIsVisible(true);
       }
 
-      setIsScrolled(current > 20);
       setLastScrollY(current);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () =>
+      window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
-
-  const navbarVariants = {
-    hidden: { y: -100, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
-        duration: 0.1,
-      },
-    },
-    exit: { y: -100, opacity: 0, transition: { duration: 0.1 } },
-  };
 
   if (!mounted) return null;
 
@@ -65,26 +47,28 @@ export function Navbar() {
     <AnimatePresence>
       {isVisible && (
         <motion.header
-          variants={navbarVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -100, opacity: 0 }}
+          transition={{ duration: 0.25 }}
           className={cn(
             "fixed top-3 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 rounded-2xl py-3 px-4 transition-all bg-black/60 backdrop-blur-xl border border-white/10 shadow-lg"
           )}
         >
           <div className="flex items-center justify-between">
 
-            {/* LEFT — Logo */}
+            {/* Logo */}
             <Link
               href="/"
-              className="font-display text-xl font-bold transition-all hover:opacity-80"
               onClick={() => setOpen(false)}
+              className="font-display text-xl font-bold transition-all hover:opacity-80"
             >
-              <span className="gradient-text tracking-tight">Ujjwal shukla</span>
+              <span className="gradient-text tracking-tight">
+                Ujjwal shukla
+              </span>
             </Link>
 
-            {/* CENTER — Desktop Nav */}
+            {/* Desktop Navigation */}
             <div className="hidden md:flex gap-6">
               {NAV_ITEMS.map((item) => {
                 const active = pathname === item.href;
@@ -117,9 +101,13 @@ export function Navbar() {
               })}
             </div>
 
-            {/* RIGHT — Resume btn */}
+            {/* Resume button */}
             <div className="hidden md:flex items-center">
-              <a href="/resume/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a
+                href="/resume/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   size="sm"
                   variant="default"
@@ -130,7 +118,7 @@ export function Navbar() {
               </a>
             </div>
 
-            {/* MOBILE MENU */}
+            {/* Mobile Menu */}
             <div className="flex md:hidden">
               <Sheet open={open} onOpenChange={setOpen}>
                 <SheetTrigger asChild>
@@ -147,13 +135,9 @@ export function Navbar() {
                   side="right"
                   className="p-0 bg-black text-white border-l border-white/10"
                 >
-
-                  {/* REQUIRED FIX */}
-                  <DialogTitle asChild>
-                    <VisuallyHidden>
-                      <h2>Mobile Navigation Menu</h2>
-                    </VisuallyHidden>
-                  </DialogTitle>
+                  <VisuallyHidden>
+                    <h2>Mobile Navigation Menu</h2>
+                  </VisuallyHidden>
 
                   <div className="flex flex-col h-full">
                     <div className="p-6 flex items-center justify-between">
@@ -162,10 +146,13 @@ export function Navbar() {
                         onClick={() => setOpen(false)}
                         className="font-display text-2xl font-bold"
                       >
-                        <span className="gradient-text">Ujjwal shukla</span>
+                        <span className="gradient-text">
+                          Ujjwal shukla
+                        </span>
                       </Link>
                     </div>
 
+                    {/* Nav links */}
                     <div className="flex-1 px-6 py-6 flex flex-col gap-2">
                       {NAV_ITEMS.map((item) => (
                         <motion.div
@@ -183,6 +170,7 @@ export function Navbar() {
                       ))}
                     </div>
 
+                    {/* Resume */}
                     <div className="px-6 pb-6">
                       <a
                         href="/resume/resume.pdf"
@@ -190,19 +178,18 @@ export function Navbar() {
                         rel="noopener noreferrer"
                       >
                         <Button
-                          className="w-full rounded-xl font-semibold shadow-md"
                           size="lg"
+                          className="w-full rounded-xl font-semibold shadow-md"
                         >
                           Resume
                         </Button>
                       </a>
                     </div>
-                  </div>
 
+                  </div>
                 </SheetContent>
               </Sheet>
             </div>
-
           </div>
         </motion.header>
       )}
