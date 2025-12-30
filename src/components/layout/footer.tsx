@@ -99,7 +99,7 @@ export function Footer() {
             © {currentYear} Abdulrahman Taghyan. All rights reserved.
           </p>
           <p className="mt-2 text-xs text-muted-foreground">
-            'Hello world!'
+            &apos;Hello world!&apos;
           </p>
         </div>
       </div>
