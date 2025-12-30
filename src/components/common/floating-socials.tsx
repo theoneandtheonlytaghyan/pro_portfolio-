@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { Twitter } from "lucide-react"; 
 import { SITE_CONFIG } from "@/lib/constants";
 
 export function FloatingSocials() {
@@ -20,6 +21,11 @@ export function FloatingSocials() {
       icon: <Mail className="h-5 w-5" />,
       href: `mailto:${SITE_CONFIG.links.email}`,
       label: "Email",
+    },
+    {
+      icon: <Twitter className="h-5 w-5" />,
+      href: SITE_CONFIG.links.x,
+      label: "X",
     },
   ];
 
@@ -47,8 +53,7 @@ export function FloatingSocials() {
           {social.icon}
         </motion.a>
       ))}
-      
-      {/* Decorative line */}
+
       <motion.div
         initial={{ scaleY: 0 }}
         animate={{ scaleY: 1 }}

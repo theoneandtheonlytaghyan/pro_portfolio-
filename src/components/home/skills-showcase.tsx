@@ -12,33 +12,36 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: "HTML", logo: "https://skillicons.dev/icons?i=html" },
-  { name: "CSS", logo: "https://skillicons.dev/icons?i=css" },
-  { name: "JavaScript", logo: "https://skillicons.dev/icons?i=js" },
-  { name: "TypeScript", logo: "https://skillicons.dev/icons?i=ts" },
-  { name: "React", logo: "https://skillicons.dev/icons?i=react" },
-  { name: "Next.js", logo: "https://skillicons.dev/icons?i=nextjs&theme=light" },
-  { name: "Tailwind", logo: "https://skillicons.dev/icons?i=tailwind" },
-  { name: "Material UI", logo: "https://skillicons.dev/icons?i=materialui" },
-  { name: "Flask", logo: "https://skillicons.dev/icons?i=flask&theme=dark" },
-  { name: "MySQL", logo: "https://skillicons.dev/icons?i=mysql" },
-  { name: "Firebase", logo: "https://skillicons.dev/icons?i=firebase" },
-  { name: "AWS", logo: "https://skillicons.dev/icons?i=aws" },
-  { name: "Vercel", logo: "https://skillicons.dev/icons?i=vercel&theme=light" },
-  { name: "Git", logo: "https://skillicons.dev/icons?i=git" },
-  { name: "GitHub", logo: "https://skillicons.dev/icons?i=github&theme=light" },
   { name: "Python", logo: "https://skillicons.dev/icons?i=python" },
-  { name: "Pandas", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
   { name: "NumPy", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" },
+  { name: "Pandas", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
+  { name: "Scikit-learn", logo: "https://avatars.githubusercontent.com/u/365630?v=4" },
+  { name: "TensorFlow", logo: "https://skillicons.dev/icons?i=tensorflow" },
+  { name: "Keras", logo: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg" },
+  { name: "PyTorch", logo: "https://skillicons.dev/icons?i=pytorch" },
   { name: "Matplotlib", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/matplotlib/matplotlib-original.svg" },
+  { name: "Seaborn", logo: "https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" },
+  { name: "Hugging Face", logo: "https://huggingface.co/front/assets/huggingface_logo.svg" },
+  { name: "SQL", logo: "https://skillicons.dev/icons?i=mysql" },
+  { name: "PostgreSQL", logo: "https://skillicons.dev/icons?i=postgres" },
+  { name: "MongoDB", logo: "https://skillicons.dev/icons?i=mongodb" },
+  { name: "Power BI", logo: "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" },
+  { name: "Tableau", logo: "https://cdn.worldvectorlogo.com/logos/tableau-software.svg" },
+  { name: "Git", logo: "https://skillicons.dev/icons?i=git" },
+  { name: "GitHub", logo: "https://skillicons.dev/icons?i=github" },
+  { name: "Docker", logo: "https://skillicons.dev/icons?i=docker" },
+  { name: "FastAPI", logo: "https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" },
+  { name: "Flask", logo: "https://skillicons.dev/icons?i=flask" },
+  { name: "Streamlit", logo: "https://streamlit.io/images/brand/streamlit-mark-color.png" },
 ];
 
 export function SkillsShowcase() {
+  // تقسيم المهارات لصفوف متوازنة
   const rows = [
-    skills.slice(0, 7),
-    skills.slice(7, 12),
-    skills.slice(12, 16),
-    skills.slice(16, 19),
+    skills.slice(0, 6),
+    skills.slice(6, 12),
+    skills.slice(12, 18),
+    skills.slice(18, 25),
   ];
 
   return (

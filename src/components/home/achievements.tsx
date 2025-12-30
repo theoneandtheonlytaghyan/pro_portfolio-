@@ -10,42 +10,42 @@ const achievements = [
   {
     icon: () => (
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-        alt="Google Logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png"
+        alt="HackerRank Logo"
         className="w-7 h-7 object-contain"
       />
     ),
-    title: "Google Student Ambassador",
+    title: "HackerRank Certifications",
     description:
-      "Organized workshops, tech sessions, and campus events to spread awareness about Google technologies. Empowered students through AI, Cloud, and Open Source programs — bridging learning with real-world innovation.",
-    metric: "Dec 2025 – Present",
+      "Earned multiple HackerRank certificates in Programming, Problem Solving, and advanced coding challenges. Demonstrated strong algorithmic thinking and coding efficiency.",
+    metric: "2024 – 2025",
   },
   {
     icon: () => (
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
-        alt="IBM Logo"
-        className="w-6 h-6 object-contain brightness-125"
+        src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png"
+        alt="Kaggle Logo"
+        className="w-7 h-7 object-contain"
       />
     ),
-    title: "AI Intern @ IBM",
+    title: "Kaggle Competitions & Contributions",
     description:
-      "Contributed to AI-driven business automation by enhancing model accuracy and performance. Assisted in building intelligent systems for data-driven insights and process optimization.",
-    metric: "Aug 2025 – Oct 2025",
+      "Actively participated in Kaggle competitions, building ML models and sharing notebooks. Contributed to collaborative projects and gained recognition in the data science community.",
+    metric: "Multiple Projects",
   },
   {
     icon: Award,
-    title: "Hack India Finalist",
+    title: "Graduation Project with Honors",
     description:
-      "Developed an AI-powered fashion chatbot integrating voice, text, and image. Offered personalized fashion advice using weather, location, and event context — Top 15 nationwide.",
-    metric: "Top 15",
+      "Developed RX-AI, an AI-powered system for drug compatibility and intelligent search. Achieved excellence with honors for innovation and real-world impact.",
+    metric: "Distinction",
   },
   {
     icon: Users,
-    title: "Coders Circle",
+    title: "Badges & Achievements",
     description:
-      "Co-founded a tech-driven community fostering mentorship and collaboration. Helped hundreds of juniors and developers accelerate their learning through open-source and events.",
-    metric: "1500+ Members",
+      "Collected programming badges across platforms, showcasing continuous learning and mastery in software engineering, AI, and problem-solving.",
+    metric: "Multiple Badges",
   },
 ];
 

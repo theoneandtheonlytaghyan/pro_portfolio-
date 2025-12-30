@@ -47,39 +47,38 @@ export function FeaturedProjects() {
           transition={{ duration: 0.5 }}
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14"
         >
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.25em]">
-              <Sparkles className="h-3 w-3" />
-              <span className="font-mono">Selected Work</span>
-            </div>
-            <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
-              Featured <span className="text-zinc-400">Projects</span>
-            </h2>
-            <p className="mt-3 max-w-xl text-sm md:text-base text-zinc-400">
-              Frontend-focused projects where I craft{" "}
-              <span className="font-semibold text-zinc-100">
-                interactive, scalable UI
-              </span>{" "}
-              with{" "}
-              <span className="font-semibold text-zinc-100">
-                clean design systems
-              </span>{" "}
-              and smooth user flows — from portfolios to full-scale platforms.
-            </p>
-          </div>
+<div>
+  <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.25em]">
+    <Sparkles className="h-3 w-3" />
+    <span className="font-mono">Selected Work</span>
+  </div>
+  <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
+    Featured <span className="text-zinc-400">Projects</span>
+  </h2>
+  <p className="mt-3 max-w-xl text-sm md:text-base text-zinc-400">
+    <span className="font-semibold text-zinc-100">AI-powered solutions</span>{" "}
+    with{" "}
+    <span className="font-semibold text-zinc-100">scalable architectures</span>{" "}
+    and{" "}
+    <span className="font-semibold text-zinc-100">real-world impact</span> — from
+    intelligent chatbots to advanced deep learning systems.
+  </p>
+</div>
 
-          <div className="flex flex-col items-start md:items-end gap-3 text-xs md:text-sm text-zinc-400">
-            <div className="flex items-center gap-2">
-              <Cpu className="h-4 w-4 text-zinc-200" />
-              <span className="font-mono uppercase tracking-[0.2em]">
-                Built, not imagined
-              </span>
-            </div>
-            <p className="max-w-sm text-right md:text-right">
-              Every card below maps to a real repo / demo
-            </p>
-          </div>
-        </motion.div>
+<div className="flex flex-col items-start md:items-end gap-3 text-xs md:text-sm text-zinc-400">
+  <div className="flex items-center gap-2">
+    <Cpu className="h-4 w-4 text-zinc-200" />
+    <span className="font-mono uppercase tracking-[0.2em]">
+      Built, not imagined
+    </span>
+  </div>
+  <p className="max-w-sm text-right md:text-right">
+    Every card below maps to a real repo / demo
+  </p>
+</div>
+</motion.div>
+
+
 
         {/* Projects Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

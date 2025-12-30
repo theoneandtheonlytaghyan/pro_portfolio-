@@ -12,15 +12,7 @@ interface Skill {
 
 // Bright icons for dark background
 const skills: Skill[] = [
-  { name: "HTML", logo: "https://skillicons.dev/icons?i=html" },
-  { name: "CSS", logo: "https://skillicons.dev/icons?i=css" },
-  { name: "JavaScript", logo: "https://skillicons.dev/icons?i=js" },
-  { name: "TypeScript", logo: "https://skillicons.dev/icons?i=ts" },
-  { name: "React", logo: "https://skillicons.dev/icons?i=react" },
-  { name: "Next.js", logo: "https://skillicons.dev/icons?i=nextjs&theme=light" },
-  { name: "Tailwind", logo: "https://skillicons.dev/icons?i=tailwind" },
-
-  { name: "Material UI", logo: "https://skillicons.dev/icons?i=materialui" },
+  
   { name: "Flask", logo: "https://skillicons.dev/icons?i=flask&theme=dark" },
   { name: "MySQL", logo: "https://skillicons.dev/icons?i=mysql" },
   { name: "Firebase", logo: "https://skillicons.dev/icons?i=firebase" },

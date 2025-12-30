@@ -12,10 +12,11 @@ export function Footer() {
           {/* About Section */}
           <div className="space-y-3">
             <h3 className="font-display text-lg font-bold gradient-text">
-              Ujjwal shukla
+              Abdulrahman Taghyan
             </h3>
             <p className="text-sm text-muted-foreground">
-              
+              Machine Learning Engineer specializing in deep learning, NLP, and scalable AI systems.
+              Passionate about responsible AI and impactful innovation.
             </p>
           </div>
 
@@ -34,6 +35,7 @@ export function Footer() {
               ))}
             </nav>
           </div>
+
           {/* Contact & Social */}
           <div className="space-y-3">
             <h3 className="font-semibold">Connect</h3>
@@ -43,14 +45,14 @@ export function Footer() {
                 className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                <span>Email</span>
+                <span>{SITE_CONFIG.links.email}</span>
               </a>
               <a
                 href={`tel:${SITE_CONFIG.links.phone}`}
                 className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Phone className="h-4 w-4" />
-                <span>Phone</span>
+                <span>{SITE_CONFIG.links.phone}</span>
               </a>
             </div>
             <div className="flex space-x-4 pt-2">
@@ -72,16 +74,32 @@ export function Footer() {
               >
                 <Linkedin className="h-5 w-5" />
               </a>
+              <a
+                href={SITE_CONFIG.links.x} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="X"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 1200 1227"
+                  className="h-5 w-5 fill-current"
+                >
+                  <path d="M714.163 0h281.137L485.197 515.342 1080 1227H796.863L..."></path>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
+
         {/* Copyright */}
         <div className="mt-8 border-t pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} {SITE_CONFIG.name}. All rights reserved.
+            © {currentYear} Abdulrahman Taghyan. All rights reserved.
           </p>
           <p className="mt-2 text-xs text-muted-foreground">
-            Built with 💜 using Next.js and Tailwind CSS
+            'Hello world!'
           </p>
         </div>
       </div>

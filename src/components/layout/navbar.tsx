@@ -64,7 +64,7 @@ export function Navbar() {
               className="font-display text-xl font-bold transition-all hover:opacity-80"
             >
               <span className="gradient-text tracking-tight">
-                Ujjwal shukla
+                Abdulrahman Taghyan
               </span>
             </Link>
 
@@ -147,7 +147,7 @@ export function Navbar() {
                         className="font-display text-2xl font-bold"
                       >
                         <span className="gradient-text">
-                          Ujjwal shukla
+                          Abdulrhman Taghyan
                         </span>
                       </Link>
                     </div>

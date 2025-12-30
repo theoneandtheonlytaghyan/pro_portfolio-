@@ -1,17 +1,18 @@
 // App constants
 
 export const SITE_CONFIG = {
-  name: "Ujjwal Shukla",
+  name: "Abdulrahman Taghyan",
   description:
-    "B.Tech Computer Science Engineering Student at Lloyd Institute of Engineering & Technology | Full-stack Developer | Community Builder | AI & Web Enthusiast",
-  url: "https://ujjwalshukla.com", 
-  ogImage: "/images/ujjwal/og-image.png",
+    "Machine Learning Engineer specializing in Deep Learning, NLP, Computer Vision, and deploying AI solutions. Passionate about responsible AI, continuous learning, and impactful innovation.",
+  url: "https://theoneandtheonlytaghyan.github.io/tay", 
+  ogImage: "/images/taghyan/og-image.png",
   links: {
-    email: "ujjwalshukla291@gmail.com",
-    github: "https://github.com/techieujjwal",
-    linkedin: "https://linkedin.com/in/ujjwal-shukla88821",
-    phone: "+91 8882194557"
-  }
+    email: "abmtaghyan@gmail.com",
+    github: "https://github.com/theoneandtheonlytaghyan",
+    linkedin: "https://linkedin.com/in/taghyan",
+    phone: "+20 1024194861",
+    x: "https://x.com/iamtaghyan", 
+  },
 };
 
 export const NAV_ITEMS = [
@@ -19,24 +20,24 @@ export const NAV_ITEMS = [
   { label: "About", href: "/about" },
   { label: "Experience", href: "/experience" },
   { label: "Projects", href: "/projects" },
-  { label: "Achievements", href: "/#achievements" }
+  { label: "Achievements", href: "/#achievements" },
 ];
 
 export const ANIMATION_VARIANTS = {
   fadeUp: {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    visible: { opacity: 1, y: 0 },
   },
   fadeDown: {
     hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0 }
+    visible: { opacity: 1, y: 0 },
   },
   fadeIn: {
     hidden: { opacity: 0 },
-    visible: { opacity: 1 }
+    visible: { opacity: 1 },
   },
   scaleIn: {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1 }
-  }
+    visible: { opacity: 1, scale: 1 },
+  },
 };

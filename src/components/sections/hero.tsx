@@ -15,16 +15,10 @@ import {
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* 3D Background */}
       <LazyStarsBackground />
-      
-      {/* Floating Particles */}
       <FloatingParticles />
-      
-      {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-lavender/10 via-transparent to-teal/10" />
-      
-      {/* Content */}
+
       <div className="container mx-auto px-4 py-20 relative z-10">
         <motion.div
           initial="hidden"
@@ -33,7 +27,6 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-4xl mx-auto"
         >
-          {/* Greeting */}
           <motion.p
             variants={ANIMATION_VARIANTS.fadeDown}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -41,7 +34,7 @@ export function Hero() {
           >
             Hello, I&apos;m
           </motion.p>
-          {/* Name with gradient */}
+
           <motion.h1
             variants={ANIMATION_VARIANTS.scaleIn}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -52,31 +45,28 @@ export function Hero() {
             }}
           >
             <GradientText className="font-display">
-              Ujjwal shukla
+              Abdulrahman Taghyan
             </GradientText>
           </motion.h1>
 
-          {/* Tagline */}
           <motion.div
             variants={ANIMATION_VARIANTS.fadeUp}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-xl md:text-2xl text-muted-foreground mb-8"
           >
-            
             <span className="block mt-2">
               <Typewriter 
                 words={[
-                  "Frontend Developer",
-                  "Cyber security enthusiast",
-                  "Problem Solver",
-                  "Tech Innovator"
+                  "Machine Learning Engineer",
+                  "Deep Learning & NLP Specialist",
+                  "Computer Vision Enthusiast",
+                  "AI Innovator"
                 ]}
                 className="text-primary font-semibold"
               />
             </span>
           </motion.div>
 
-          {/* CTA Buttons */}
           <motion.div
             variants={ANIMATION_VARIANTS.fadeUp}
             transition={{ duration: 0.6, delay: 0.5 }}
@@ -87,11 +77,9 @@ export function Hero() {
                 <Link href="/projects">View Projects</Link>
               </Button>
             </MagneticButton>
-            
           </motion.div>
         </motion.div>
       </div>
     </section>
   );
 }
-      

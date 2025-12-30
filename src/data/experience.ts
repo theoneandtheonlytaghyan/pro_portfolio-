@@ -12,125 +12,74 @@ export type Experience = {
 
 export const experienceData: Experience[] = [
   {
-    id: "google-student-ambassador",
-    company: "Google",
-    role: "Student Ambassador",
-    duration: "Dec 2025 - Present",
-    location: "Delhi, India · Remote",
+    id: "depi-training",
+    company: "Digital Egypt Pioneers Initiative (DEPI)",
+    role: "Machine Learning Trainee",
+    duration: "Oct 2024 - Apr 2025",
+    location: "Cairo, Egypt",
     description:
-      "Working as a Student Ambassador helping students explore AI tools, providing technical guidance, and building student-focused learning initiatives.",
+      "Completed an intensive scholarship program focused on machine learning, deep learning, and AI deployment.",
     achievements: [
-      "Hosted AI workshops and student learning sessions",
-      "Guided students in using Gemini and Google AI tools",
-      "Built strong networking and mentorship environment",
-      "Enhanced communication and leadership capabilities"
+      "Built and trained ML/DL models for real-world use cases",
+      "Developed preprocessing pipelines for structured and unstructured datasets",
+      "Implemented classification, regression, and NLP models",
+      "Improved model accuracy through hyperparameter tuning and feature engineering"
     ],
     technologies: [
-      "Public Speaking",
-      "Community Engagement",
-      "AI Tools",
-      "Leadership"
+      "Python",
+      "TensorFlow",
+      "PyTorch",
+      "Scikit-learn",
+      "Pandas",
+      "FastAPI"
     ],
-    type: "part-time"
+    type: "training"
   },
-
   {
-    id: "ibm-ai-intern",
-    company: "IBM",
-    role: "Artificial Intelligence Intern",
-    duration: "Aug 2025 - Sep 2025",
-    location: "Delhi, India · Remote",
+    id: "ml-freelance",
+    company: "Freelance",
+    role: "Machine Learning Engineer",
+    duration: "May 2025 - Dec 2025",
+    location: "Remote · Cairo, Egypt",
     description:
-      "Completed a 6-week Virtual Internship in Artificial Intelligence under IBM's Future Skills Program (FSP), focused on AI fundamentals and real-world applications.",
+      "Worked as a freelance Machine Learning Engineer, delivering AI-powered solutions for diverse clients and projects.",
     achievements: [
-      "Gained hands-on experience in Artificial Intelligence fundamentals",
-      "Worked on Machine Learning workflows and data preprocessing",
-      "Applied AI concepts to solve real-world problem statements",
-      "Built strong foundations in AI and analytics"
+      "Developed and deployed machine learning models for NLP and computer vision tasks",
+      "Built scalable APIs using FastAPI for real-world applications",
+      "Collaborated with clients to customize AI solutions for business needs",
+      "Enhanced model performance through hyperparameter tuning and advanced evaluation techniques"
     ],
     technologies: [
-      "Artificial Intelligence",
-      "Machine Learning",
-      "Data Preprocessing",
-      "Data Analytics"
+      "Python",
+      "TensorFlow",
+      "PyTorch",
+      "FastAPI",
+      "Scikit-learn",
+      "Docker",
+      "GitHub"
     ],
-    type: "internship"
+    type: "freelance"
   },
   {
-    id: "makeintern-app-intern",
-    company: "MakeIntern",
-    role: "App Development Intern",
-    duration: "Jul 2025",
-    location: "West Delhi, Delhi, India · Remote",
+    id: "military-service",
+    company: "Egyptian Armed Forces",
+    role: "Military Service",
+    duration: "Jan 2026 - Present",
+    location: "Egypt",
     description:
-      "Worked as an App Development Intern focusing on UI/UX design and mobile application user flow for real-world projects.",
+      "Currently serving mandatory military service, gaining discipline, leadership, and teamwork experience.",
     achievements: [
-      "Designed and improved UI/UX for mobile application prototypes",
-      "Worked on app structure and user flow under live project environment",
-      "Collaborated with SkillUpgrad, MakeIntern, and NSDC on design tasks",
-      "Delivered a functional prototype within a one-month internship program"
+      "Developed resilience and adaptability in challenging environments",
+      "Strengthened leadership and collaboration skills",
+      "Built strong time management and organizational capabilities",
+      "Contributed to national service with dedication and responsibility"
     ],
     technologies: [
-      "UI/UX Design",
-      "Flutter",
-      "App Prototyping",
-      "Mobile App Design",
-      "Figma"
+      "Leadership",
+      "Teamwork",
+      "Discipline",
+      "Adaptability"
     ],
-    type: "internship"
-  },
-
-  {
-    id: "coders-circle-cofounder",
-    company: "Coders Circle",
-    role: "Co-Founder",
-    duration: "Aug 2025 - Present",
-    location: "Greater Noida, India · Remote",
-    description:
-      "Co-founded and actively managing Coders Circle, a fast-growing student-led tech community focused on improving technical skills and collaboration.",
-    achievements: [
-      "Scaled the community to 1400+ students within the first month",
-      "Implemented effective community engagement strategies and learning initiatives",
-      "Managed project curation and technical collaborations",
-      "Built a strong peer-learning environment for developers and tech enthusiasts"
-    ],
-    technologies: ["Community Building", "Leadership", "Team Management", "Growth Strategy"],
-    type: "full-time"
-  },
-
-  {
-    id: "letsupgrade-student-ambassador",
-    company: "LetsUpgrade",
-    role: "Student Ambassador",
-    duration: "Sep 2025 - Nov 2025",
-    location: "Delhi, India · Remote",
-    description:
-      "Served as a Student Ambassador, promoting tech programs and workshops to enhance campus tech awareness and participation.",
-    achievements: [
-      "Promoted workshops, webinars, and tech events among students",
-      "Increased awareness about LetsUpgrade programs on campus",
-      "Collaborated with students and faculty to strengthen campus tech community",
-      "Improved leadership, communication, and networking skills"
-    ],
-    technologies: ["Communication", "Leadership", "Marketing Outreach", "Community Engagement"],
-    type: "internship"
-  },
-
-  {
-    id: "devsphere-event-manager",
-    company: "DevSphereIndia",
-    role: "Event Manager",
-    duration: "Sep 2025 - Present",
-    location: "Delhi, India · Hybrid",
-    description:
-      "Working as an Event Manager intern, planning and managing technical events, hackathons, and student-focused workshops to enhance engagement and participation.",
-    achievements: [
-      "Planned and managed multiple technical events, hackathons, and workshops for student communities",
-      "Coordinated with speakers, mentors, and participants to ensure smooth execution",
-      "Collaborated with the event team to improve outreach and participation strategies",
-      "Built hands-on experience in hybrid (online + offline) community management"
-    ],
-    technologies: ["Event Management", "Stakeholder Coordination", "Community Building", "Public Speaking"],
-    type: "internship"
+    type: "service"
   }
 ];

@@ -4,17 +4,13 @@ import { motion } from "framer-motion";
 import { ANIMATION_VARIANTS } from "@/lib/constants";
 import { educationData } from "@/data/achievements";
 import { GraduationCap, MapPin, Calendar } from "lucide-react";
-import { 
-  ScrollReveal, 
-  GradientText
-} from "@/components/animations";
+import { ScrollReveal, GradientText } from "@/components/animations";
 
 export function About() {
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
 
-        {/* Section Header */}
         <ScrollReveal delay={0.1}>
           <motion.div
             initial="hidden"
@@ -27,13 +23,12 @@ export function About() {
               About <GradientText>Me</GradientText>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Passionate about building innovative solutions at the intersection of
-              cloud computing, full-stack development, and emerging technologies.
+              Machine Learning Engineer specializing in deep learning, NLP, computer vision, and scalable AI systems.
+              Passionate about responsible AI, continuous learning, and impactful innovation.
             </p>
           </motion.div>
         </ScrollReveal>
 
-        {/* Intro + Education */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -44,50 +39,37 @@ export function About() {
         >
           <div className="grid md:grid-cols-2 gap-12 items-start">
 
-            {/* LEFT — About Text */}
             <div className="space-y-6 text-lg leading-relaxed">
               <p>
-                Hi! I&apos;m Ujjwal Shukla, currently pursuing my B.Tech in Computer Science Engineering
-                at Lloyd Institute of Engineering and Technology, Delhi. With a strong interest in
-                technology, community building, and full-stack development, I love creating impactful
-                solutions and digital experiences that make a real difference.
+                Hi! I&apos;m Abdulrahman Taghyan, a Computer Science student at Shorouk Academy and a Machine Learning Engineer.
+                I specialize in building AI-powered systems with real-world impact, focusing on NLP, computer vision, and large-scale deep learning.
               </p>
 
               <p>
-                I completed an App Designing Internship at MakeIntern, where I designed their
-                website UI, focusing on user experience, layout structuring, and visual consistency.
-                This experience strengthened my design thinking and practical implementation skills.
-                I&apos;m passionate about leveraging technology and design to solve real-world problems.
+                I completed a Machine Learning Internship at DEPI (Digital Egypt Pioneers Initiative), where I built and trained ML/DL models,
+                developed preprocessing pipelines, and implemented NLP solutions. This experience strengthened my ability to deliver practical AI systems.
               </p>
 
               <p>
-                As the Co-founder of Coders Circle, a tech community with 1500+ developers and students,
-                I&apos;ve been building a strong coding culture through events, mentorship, and collaborative
-                learning, helping students grow individually and as a community.
+                I actively contribute to Kaggle competitions and open-source projects, and I&apos;ve developed impactful solutions like the RX-AI graduation project
+                and a Mental Health Chatbot powered by advanced NLP techniques. I&apos;m passionate about leveraging AI to solve real-world problems responsibly.
               </p>
             </div>
 
-            {/* RIGHT — FLOATING PHOTO + CARD */}
             <div className="relative flex flex-col items-center">
-
-              {/* FLOATING IMAGE */}
               <div className="absolute -top-24">
                 <div className="relative w-75 h-75 rounded-full p-[4px] bg-gradient-to-br from-primary via-purple-500 to-blue-500 shadow-2xl">
                   <div className="rounded-full overflow-hidden w-full h-full">
-                    
                     <img
-                      src="/me/me.png"
-                      alt="Ujjwal Shukla"
+                      src="/me/me.jpeg"
+                      alt="Abdulrahman Taghyan"
                       className="object-cover w-full h-full"
                     />
-                    
                   </div>
                 </div>
-
               </div>
               <br /><br /><br />
 
-              {/* EDUCATION CARD — moved down for spacing */}
               <div className="pt-40 w-full space-y-4">
                 {educationData.map((edu, index) => (
                   <motion.div
@@ -121,11 +103,9 @@ export function About() {
                   </motion.div>
                 ))}
               </div>
-
             </div>
           </div>
         </motion.div>
-
       </div>
     </section>
   );
