@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="mt-auto border-t bg-background">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-3 gap-8">
           {/* About Section */}
           <div className="space-y-3">
             <h3 className="font-display text-lg font-bold gradient-text">

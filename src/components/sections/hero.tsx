@@ -30,7 +30,7 @@ export function Hero() {
           <motion.p
             variants={ANIMATION_VARIANTS.fadeDown}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground mb-4"
+            className="text-xl text-muted-foreground mb-4"
           >
             Hello, I&apos;m
           </motion.p>
@@ -38,7 +38,7 @@ export function Hero() {
           <motion.h1
             variants={ANIMATION_VARIANTS.scaleIn}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
+            className="font-display text-7xl md:text-7xl lg:text-8xl font-bold mb-6"
             style={{ 
               background: "none",
               WebkitTextFillColor: "unset"
@@ -52,7 +52,7 @@ export function Hero() {
           <motion.div
             variants={ANIMATION_VARIANTS.fadeUp}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-8"
+            className="text-2xl text-muted-foreground mb-8"
           >
             <span className="block mt-2">
               <Typewriter 

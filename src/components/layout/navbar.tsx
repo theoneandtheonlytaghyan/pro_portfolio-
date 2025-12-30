@@ -69,7 +69,7 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex gap-6">
+            <div className="flex gap-4 sm:gap-6">
               {NAV_ITEMS.map((item) => {
                 const active = pathname === item.href;
                 return (
@@ -102,7 +102,7 @@ export function Navbar() {
             </div>
 
             {/* Resume button */}
-            <div className="hidden md:flex items-center">
+            <div className="flex items-center">
               <a
                 href="/resume/resume.pdf"
                 target="_blank"
@@ -118,8 +118,8 @@ export function Navbar() {
               </a>
             </div>
 
-            {/* Mobile Menu */}
-            <div className="flex md:hidden">
+            {/* Mobile Menu Hidden */}
+            <div className="hidden">
               <Sheet open={open} onOpenChange={setOpen}>
                 <SheetTrigger asChild>
                   <Button

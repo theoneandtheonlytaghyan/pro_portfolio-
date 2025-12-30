@@ -58,6 +58,10 @@ export const generateMetadata = (): Metadata => {
       images: [SITE_CONFIG.ogImage],
       creator: "@taghyan",
     },
+    viewport: {
+      width: "1200",
+      initialScale: 1,
+    },
     robots: {
       index: true,
       follow: true,
