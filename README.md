@@ -54,7 +54,7 @@ Featuring:
 - RX‑AI (Graduation Project – Drug Compatibility & Semantic Search)
 - Kaggle Contributions (NLP & Computer Vision pipelines)
 - Achievements Section
-- Graduated with honors (امتياز) for RX‑AI project
+- Graduated with honors for RX‑AI project
 - Published reproducible ML notebooks on Kaggle
 - HackerRank certifications in programming & problem solving
 
