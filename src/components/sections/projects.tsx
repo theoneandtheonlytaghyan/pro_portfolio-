@@ -34,7 +34,7 @@ export function Projects() {
 
   return (
     <section className="py-20 px-4 bg-muted/30">
-      <div className="container mx-auto max-w-6xl">
+      <div className="w-[1200px] mx-auto">
         {/* Section Header */}
         <motion.div
           initial="hidden"

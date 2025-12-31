@@ -47,11 +47,11 @@ export function SkillsShowcase() {
         </p>
       </div>
 
-      <div className="w-full max-w-6xl flex flex-col items-center justify-center space-y-12">
+      <div className="w-[1200px] flex flex-col items-center justify-center space-y-12">
         {rows.map((row, i) => (
           <div
             key={i}
-            className="flex flex-wrap justify-center gap-8 md:gap-12"
+            className="flex flex-wrap justify-center gap-12"
           >
             {row.map((skill) => (
               <SkillIcon key={skill.name} skill={skill} />

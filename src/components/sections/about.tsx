@@ -9,7 +9,7 @@ import { ScrollReveal, GradientText } from "@/components/animations";
 export function About() {
   return (
     <section className="py-20 px-4">
-      <div className="container mx-auto max-w-6xl">
+      <div className="w-[1200px] mx-auto">
 
         <ScrollReveal delay={0.1}>
           <motion.div

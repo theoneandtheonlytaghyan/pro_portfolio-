@@ -19,7 +19,7 @@ export function Hero() {
       <FloatingParticles />
       <div className="absolute inset-0 bg-gradient-to-br from-lavender/10 via-transparent to-teal/10" />
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="w-[1200px] mx-auto px-4 py-20 relative z-10">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -70,10 +70,10 @@ export function Hero() {
           <motion.div
             variants={ANIMATION_VARIANTS.fadeUp}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0"
+            className="flex flex-row gap-4 justify-center"
           >
             <MagneticButton>
-              <Button asChild size="lg" className="text-sm sm:text-base px-4 sm:px-8">
+              <Button asChild size="lg" className="text-base px-8">
                 <Link href="/projects">View Projects</Link>
               </Button>
             </MagneticButton>

@@ -52,7 +52,7 @@ export function Navbar() {
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.25 }}
           className={cn(
-            "fixed top-3 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 rounded-2xl py-3 px-4 transition-all bg-black/60 backdrop-blur-xl border border-white/10 shadow-lg"
+            "fixed top-3 left-1/2 -translate-x-1/2 w-[1140px] z-50 rounded-2xl py-3 px-4 transition-all bg-black/60 backdrop-blur-xl border border-white/10 shadow-lg"
           )}
         >
           <div className="flex items-center justify-between">
@@ -69,7 +69,7 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="flex gap-4 sm:gap-6">
+            <div className="flex gap-6">
               {NAV_ITEMS.map((item) => {
                 const active = pathname === item.href;
                 return (

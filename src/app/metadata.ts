@@ -61,6 +61,7 @@ export const generateMetadata = (): Metadata => {
     viewport: {
       width: "1200",
       initialScale: 1,
+      userScalable: true,
     },
     robots: {
       index: true,
