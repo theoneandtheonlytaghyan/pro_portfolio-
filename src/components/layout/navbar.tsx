@@ -144,10 +144,10 @@ export function Navbar() {
                       <Link
                         href="/"
                         onClick={() => setOpen(false)}
-                        className="font-display text-2xl font-bold"
+                        className="font-display text-xl sm:text-2xl font-bold"
                       >
                         <span className="gradient-text">
-                          Abdulrhman Taghyan
+                          Abdulrahman Taghyan
                         </span>
                       </Link>
                     </div>
