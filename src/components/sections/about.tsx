@@ -39,7 +39,7 @@ export function About() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-            <div className="space-y-6 text-base sm:text-lg leading-relaxed order-2 md:order-1">
+            <div className="space-y-6 text-base sm:text-lg leading-relaxed order-2 md:order-1 text-center md:text-left">
               <p>
                 Hi! I&apos;m Abdulrahman Taghyan, a Computer Science student at Shorouk Academy and a Machine Learning Engineer.
                 I specialize in building AI-powered systems with real-world impact, focusing on NLP, computer vision, and large-scale deep learning.
@@ -56,7 +56,7 @@ export function About() {
               </p>
             </div>
 
-            <div className="flex flex-col items-center order-1 md:order-2 space-y-8 mb-8 md:mb-0">
+            <div className="flex flex-col items-center order-1 md:order-2 space-y-8 mb-12 md:mb-0">
               <div className="relative">
                 <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full p-[4px] bg-gradient-to-br from-primary via-purple-500 to-blue-500 shadow-2xl">
                   <div className="rounded-full overflow-hidden w-full h-full">

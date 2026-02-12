@@ -38,7 +38,7 @@ export function Hero() {
           <motion.h1
             variants={ANIMATION_VARIANTS.scaleIn}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
+            className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
             style={{ 
               background: "none",
               WebkitTextFillColor: "unset"
